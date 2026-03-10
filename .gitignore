@@ -18,11 +18,8 @@ build/
 *.log
 .cache/
 
-# Выходные данные (CSV) — можно раскомментировать, если не хотите пушить данные
+# Выходные данные (CSV) — не отправляются в репозиторий
 *.csv
-# Большие файлы (лимит GitHub 100 MB)
-rknweb_blocked_sites.csv
-rknweb_blocked_sites*.csv
 
 # Загрузки парсеров
 downloads/
