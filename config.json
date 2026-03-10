@@ -1,0 +1,65 @@
+{
+  "parsers": {
+    "parser1": {
+      "name": "Парсер каталога террористов и экстремистов Росфинмониторинга",
+      "urls": ["https://www.fedsfm.ru/documents/terrorists-catalog-portal-act"],
+      "output_file": "Перечень террористов и экстремистов РОСФИНМОНИТОРИНГ/parser1_data.csv",
+      "enabled": false,
+      "use_selenium": true,
+      "selenium_timeout": 30
+    },
+    "parser2": {
+      "name": "Парсер перечня иностранных и международных организаций Минюста",
+      "urls": ["https://minjust.gov.ru/ru/pages/perechen-inostrannyh-i-mezhdunarodnyh-organizacij-deyatelnost-kotoryh-priznana-nezhelatelnoj-na-territorii-rossijskoj-federacii/"],
+      "output_file": "Перечень нежелательных иностранных и международных организаций МИНЮСТ/parser2_data.csv",
+      "enabled": false,
+      "use_selenium": false,
+      "selenium_timeout": 30,
+      "download_dir": "downloads"
+    },
+    "parser3": {
+      "name": "Парсер перечня организаций, признанных экстремистскими Минюста",
+      "urls": ["https://minjust.gov.ru/ru/documents/7822/"],
+      "output_file": "Перечень организаций, признанных в соответствии с законодательством Российской Федерации экстремистскими МИНЮСТ/parser3_data.csv",
+      "enabled": false,
+      "use_selenium": true,
+      "selenium_timeout": 30
+    },
+    "parser4": {
+      "name": "Парсер единого федерального списка террористических организаций ФСБ",
+      "urls": ["http://fsb.ru/fsb/npd/terror.htm"],
+      "output_file": "Единый федеральный список организаций в том числе иностранных и международных организаций признанных в соответствии с законодательством Российской Федерации террористическими/parser4_data.csv",
+      "enabled": false,
+      "use_selenium": true,
+      "selenium_timeout": 30
+    },
+    "parser5": {
+      "name": "Парсер реестра иностранных агентов Минюста",
+      "urls": ["https://minjust.gov.ru/ru/pages/reestr-inostryannykh-agentov/"],
+      "output_file": "Реестр иностранных агентов МИНЮСТ/parser5_data.csv",
+      "enabled": true,
+      "use_selenium": true,
+      "selenium_timeout": 30,
+      "download_dir": "downloads"
+    },
+    "parser6": {
+      "name": "Парсер 6",
+      "urls": ["https://example.com/data11", "https://example.com/data12"],
+      "output_file": "output/parser6_data.csv",
+      "enabled": false
+    },
+    "parser7": {
+      "name": "Парсер перечня экстремистских материалов Минюста",
+      "urls": ["https://minjust.gov.ru/ru/extremist-materials/"],
+      "output_file": "Перечень экстремистских материалов МИНЮСТ/parser7_exportfsm.csv",
+      "enabled": true,
+      "timeout": 120
+    }
+  },
+  "settings": {
+    "timeout": 30,
+    "retry_count": 3,
+    "delay_between_requests": 1,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  }
+}

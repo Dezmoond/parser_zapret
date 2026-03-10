@@ -1,0 +1,40 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Логи и кэш
+*.log
+.cache/
+
+# Выходные данные (CSV) — можно раскомментировать, если не хотите пушить данные
+*.csv
+# Большие файлы (лимит GitHub 100 MB)
+rknweb_blocked_sites.csv
+rknweb_blocked_sites*.csv
+
+# Загрузки парсеров
+downloads/
+
+# IDE и ОС
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Секреты
+.env
+.env.local
+*.pem
