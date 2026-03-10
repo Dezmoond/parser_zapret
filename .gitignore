@@ -1,0 +1,25 @@
+# Не отправлять данные и конфиги с данными
+*.csv
+*.txt
+*.jsonl
+*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Прочее
+.DS_Store
+*.log

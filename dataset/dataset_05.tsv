@@ -1,0 +1,61 @@
+id	text	label
+1	Смирнов Алексей Петрович	fio
+2	ООО "Вектор"	organization
+3	Война и мир	title
+4	https://ru.wikipedia.org/wiki/Заглавная_страница	url
+5	Козлова Мария Ивановна	fio
+6	АО "Сбербанк"	organization
+7	Броненосец Потёмкин	title
+8	http://example.com/page	url
+9	Николаев Дмитрий Сергеевич	fio
+10	ИП Петров И.С.	organization
+11	Мастер и Маргарита	title
+12	https://yandex.ru/search/?text=test	url
+13	Волкова Елена Александровна	fio
+14	МГУ имени М.В. Ломоносова	organization
+15	Тёмная ночь	title
+16	https://github.com/user/repo	url
+17	Федоров Артём Викторович	fio
+18	ПАО "Газпром"	organization
+19	Ирония судьбы, или С лёгким паром!	title
+20	https://habr.com/ru/articles/123456/	url
+21	Соколова Анна Дмитриевна	fio
+22	ООО Рога и копыта	organization
+23	Служебный роман	title
+24	http://lib.ru/BOOKS/AUTHOR.txt	url
+25	Лебедев Игорь Олегович	fio
+26	Министерство образования РФ	organization
+27	Кавказская пленница	title
+28	https://www.kinopoisk.ru/film/123/	url
+29	Орлова Татьяна Николаевна	fio
+30	Всероссийская государственная библиотека	organization
+31	Мой ласковый и нежный зверь	title
+32	https://stackoverflow.com/questions/123	url
+33	Кузнецов Павел Андреевич	fio
+34	ЗАО "Технопарк"	organization
+35	Белый Бим Чёрное ухо	title
+36	https://vk.com/id123456	url
+37	Новикова Ольга Сергеевна	fio
+38	ФГБОУ ВО "Московский политех"	organization
+39	Девятая рота	title
+40	https://t.me/channel_name	url
+41	Морозов Виктор Иванович	fio
+42	Сеть магазинов "Пятёрочка"	organization
+43	Подмосковные вечера	title
+44	https://docs.python.org/3/	url
+45	Егорова Надежда Владимировна	fio
+46	Российская национальная библиотека	organization
+47	Офицеры	title
+48	https://ru.wikipedia.org/wiki/Россия	url
+49	Соловьёв Григорий Михайлович	fio
+50	АО "Российские железные дороги"	organization
+51	Москва слезам не верит	title
+52	http://www.pravo.gov.ru	url
+53	Виноградова Юлия Павловна	fio
+54	ООО "Яндекс"	organization
+55	Преступление и наказание	title
+56	https://www.garant.ru/products/ipo/	url
+57	Белов Константин Александрович	fio
+58	ФГУП "Почта России"	organization
+59	Левиафан	title
+60	https://www.mos.ru/	url

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <meta>
+    <description>Датасет для классификации: ФИО, организация, название произведения, ссылка</description>
+    <classes>fio, organization, title, url</classes>
+  </meta>
+  <records>
+    <record><text>Смирнов Алексей Петрович</text><label>fio</label></record>
+    <record><text>ООО "Вектор"</text><label>organization</label></record>
+    <record><text>Война и мир</text><label>title</label></record>
+    <record><text>https://ru.wikipedia.org/wiki/Заглавная_страница</text><label>url</label></record>
+    <record><text>Козлова Мария Ивановна</text><label>fio</label></record>
+    <record><text>АО "Сбербанк"</text><label>organization</label></record>
+    <record><text>Броненосец Потёмкин</text><label>title</label></record>
+    <record><text>http://example.com/page</text><label>url</label></record>
+    <record><text>Николаев Дмитрий Сергеевич</text><label>fio</label></record>
+    <record><text>ИП Петров И.С.</text><label>organization</label></record>
+    <record><text>Мастер и Маргарита</text><label>title</label></record>
+    <record><text>https://yandex.ru/search/?text=test</text><label>url</label></record>
+    <record><text>Волкова Елена Александровна</text><label>fio</label></record>
+    <record><text>МГУ имени М.В. Ломоносова</text><label>organization</label></record>
+    <record><text>Тёмная ночь</text><label>title</label></record>
+    <record><text>https://github.com/user/repo</text><label>url</label></record>
+    <record><text>Федоров Артём Викторович</text><label>fio</label></record>
+    <record><text>ПАО "Газпром"</text><label>organization</label></record>
+    <record><text>Ирония судьбы, или С лёгким паром!</text><label>title</label></record>
+    <record><text>https://habr.com/ru/articles/123456/</text><label>url</label></record>
+    <record><text>Соколова Анна Дмитриевна</text><label>fio</label></record>
+    <record><text>ООО Рога и копыта</text><label>organization</label></record>
+    <record><text>Служебный роман</text><label>title</label></record>
+    <record><text>http://lib.ru/BOOKS/AUTHOR.txt</text><label>url</label></record>
+    <record><text>Лебедев Игорь Олегович</text><label>fio</label></record>
+    <record><text>Министерство образования РФ</text><label>organization</label></record>
+    <record><text>Кавказская пленница</text><label>title</label></record>
+    <record><text>https://www.kinopoisk.ru/film/123/</text><label>url</label></record>
+    <record><text>Орлова Татьяна Николаевна</text><label>fio</label></record>
+    <record><text>Всероссийская государственная библиотека</text><label>organization</label></record>
+    <record><text>Мой ласковый и нежный зверь</text><label>title</label></record>
+    <record><text>https://stackoverflow.com/questions/123</text><label>url</label></record>
+    <record><text>Кузнецов Павел Андреевич</text><label>fio</label></record>
+    <record><text>ЗАО "Технопарк"</text><label>organization</label></record>
+    <record><text>Белый Бим Чёрное ухо</text><label>title</label></record>
+    <record><text>https://vk.com/id123456</text><label>url</label></record>
+    <record><text>Новикова Ольга Сергеевна</text><label>fio</label></record>
+    <record><text>ФГБОУ ВО "Московский политех"</text><label>organization</label></record>
+    <record><text>Девятая рота</text><label>title</label></record>
+    <record><text>https://t.me/channel_name</text><label>url</label></record>
+    <record><text>Морозов Виктор Иванович</text><label>fio</label></record>
+    <record><text>Сеть магазинов "Пятёрочка"</text><label>organization</label></record>
+    <record><text>Подмосковные вечера</text><label>title</label></record>
+    <record><text>https://docs.python.org/3/</text><label>url</label></record>
+    <record><text>Егорова Надежда Владимировна</text><label>fio</label></record>
+    <record><text>Российская национальная библиотека</text><label>organization</label></record>
+    <record><text>Офицеры</text><label>title</label></record>
+    <record><text>https://ru.wikipedia.org/wiki/Россия</text><label>url</label></record>
+    <record><text>Соловьёв Григорий Михайлович</text><label>fio</label></record>
+    <record><text>АО "Российские железные дороги"</text><label>organization</label></record>
+    <record><text>Москва слезам не верит</text><label>title</label></record>
+    <record><text>http://www.pravo.gov.ru</text><label>url</label></record>
+    <record><text>Виноградова Юлия Павловна</text><label>fio</label></record>
+    <record><text>ООО "Яндекс"</text><label>organization</label></record>
+    <record><text>Преступление и наказание</text><label>title</label></record>
+    <record><text>https://www.garant.ru/products/ipo/</text><label>url</label></record>
+    <record><text>Белов Константин Александрович</text><label>fio</label></record>
+    <record><text>ФГУП "Почта России"</text><label>organization</label></record>
+    <record><text>Левиафан</text><label>title</label></record>
+    <record><text>https://www.mos.ru/</text><label>url</label></record>
+  </records>
+</dataset>

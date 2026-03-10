@@ -1,0 +1,131 @@
+# Датасет для классификации типов сущностей (ФИО, организация, название, ссылка)
+# Кодировка: UTF-8
+
+description: "Классы: fio, organization, title, url"
+classes:
+  - fio
+  - organization
+  - title
+  - url
+
+samples:
+  - text: "Смирнов Алексей Петрович"
+    label: fio
+  - text: "ООО \"Вектор\""
+    label: organization
+  - text: "Война и мир"
+    label: title
+  - text: "https://ru.wikipedia.org/wiki/Заглавная_страница"
+    label: url
+  - text: "Козлова Мария Ивановна"
+    label: fio
+  - text: "АО \"Сбербанк\""
+    label: organization
+  - text: "Броненосец Потёмкин"
+    label: title
+  - text: "http://example.com/page"
+    label: url
+  - text: "Николаев Дмитрий Сергеевич"
+    label: fio
+  - text: "ИП Петров И.С."
+    label: organization
+  - text: "Мастер и Маргарита"
+    label: title
+  - text: "https://yandex.ru/search/?text=test"
+    label: url
+  - text: "Волкова Елена Александровна"
+    label: fio
+  - text: "МГУ имени М.В. Ломоносова"
+    label: organization
+  - text: "Тёмная ночь"
+    label: title
+  - text: "https://github.com/user/repo"
+    label: url
+  - text: "Федоров Артём Викторович"
+    label: fio
+  - text: "ПАО \"Газпром\""
+    label: organization
+  - text: "Ирония судьбы, или С лёгким паром!"
+    label: title
+  - text: "https://habr.com/ru/articles/123456/"
+    label: url
+  - text: "Соколова Анна Дмитриевна"
+    label: fio
+  - text: "ООО Рога и копыта"
+    label: organization
+  - text: "Служебный роман"
+    label: title
+  - text: "http://lib.ru/BOOKS/AUTHOR.txt"
+    label: url
+  - text: "Лебедев Игорь Олегович"
+    label: fio
+  - text: "Министерство образования РФ"
+    label: organization
+  - text: "Кавказская пленница"
+    label: title
+  - text: "https://www.kinopoisk.ru/film/123/"
+    label: url
+  - text: "Орлова Татьяна Николаевна"
+    label: fio
+  - text: "Всероссийская государственная библиотека"
+    label: organization
+  - text: "Мой ласковый и нежный зверь"
+    label: title
+  - text: "https://stackoverflow.com/questions/123"
+    label: url
+  - text: "Кузнецов Павел Андреевич"
+    label: fio
+  - text: "ЗАО \"Технопарк\""
+    label: organization
+  - text: "Белый Бим Чёрное ухо"
+    label: title
+  - text: "https://vk.com/id123456"
+    label: url
+  - text: "Новикова Ольга Сергеевна"
+    label: fio
+  - text: "ФГБОУ ВО \"Московский политех\""
+    label: organization
+  - text: "Девятая рота"
+    label: title
+  - text: "https://t.me/channel_name"
+    label: url
+  - text: "Морозов Виктор Иванович"
+    label: fio
+  - text: "Сеть магазинов \"Пятёрочка\""
+    label: organization
+  - text: "Подмосковные вечера"
+    label: title
+  - text: "https://docs.python.org/3/"
+    label: url
+  - text: "Егорова Надежда Владимировна"
+    label: fio
+  - text: "Российская национальная библиотека"
+    label: organization
+  - text: "Офицеры"
+    label: title
+  - text: "https://ru.wikipedia.org/wiki/Россия"
+    label: url
+  - text: "Соловьёв Григорий Михайлович"
+    label: fio
+  - text: "АО \"Российские железные дороги\""
+    label: organization
+  - text: "Москва слезам не верит"
+    label: title
+  - text: "http://www.pravo.gov.ru"
+    label: url
+  - text: "Виноградова Юлия Павловна"
+    label: fio
+  - text: "ООО \"Яндекс\""
+    label: organization
+  - text: "Преступление и наказание"
+    label: title
+  - text: "https://www.garant.ru/products/ipo/"
+    label: url
+  - text: "Белов Константин Александрович"
+    label: fio
+  - text: "ФГУП \"Почта России\""
+    label: organization
+  - text: "Левиафан"
+    label: title
+  - text: "https://www.mos.ru/"
+    label: url
