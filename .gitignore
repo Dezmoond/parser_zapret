@@ -1,0 +1,46 @@
+# Виртуальное окружение
+venv/
+venv_cpu/
+.venv/
+env/
+
+# Модели и чекпоинты (большие файлы)
+*.bin
+*.safetensors
+*.pt
+*.pth
+llama_train/output/
+llama_train/output_unsloth/
+**/checkpoint-*/
+**/model/
+**/models/
+
+# Кэш и артефакты
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Логи
+*.log
+logs/
+
+# IDE и ОС
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Переменные окружения (секреты)
+.env
+.env.local
+
+# Датасеты (если большие)
+# extremism_detection_dataset/
+# extremism_detection_dataset_number_char/

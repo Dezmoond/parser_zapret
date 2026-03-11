@@ -1,0 +1,11 @@
+# Вариант для работы БЕЗ GPU (только CPU).
+# Рекомендуемый Python: 3.10 или 3.11
+#
+# 1) Сначала установите PyTorch CPU (меньше проблем с DLL на Windows):
+#    pip uninstall torch -y
+#    pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# 2) Затем: pip install -r requirements-cpu.txt
+
+transformers>=4.36.0,<4.46.0
+accelerate>=0.25.0

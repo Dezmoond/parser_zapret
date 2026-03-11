@@ -1,0 +1,26 @@
+# Дообучение Llama-3.2-3B на датасете экстремизма (GPU)
+# Сборка из корня проекта: docker build -f llama_test/llama_train/Dockerfile.train -t llama-train .
+# Запуск: см. README в llama_train.
+# Образ devel нужен для сборки flash-attn (в runtime нет компилятора).
+
+FROM pytorch/pytorch:2.4.0-cuda12.1-cudnn9-devel
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+
+COPY llama_test/llama_train/requirements_train.txt ./
+RUN pip install --no-cache-dir -r requirements_train.txt
+
+# Flash Attention 2 — сборка из исходников (в devel есть nvcc/gcc)
+# RTX 4060 Ti = Ada (8.9); без этого собирается под все архитектуры и дольше
+ENV TORCH_CUDA_ARCH_LIST="8.0;8.6;8.9"
+RUN pip install flash-attn --no-build-isolation
+
+COPY llama_test/llama_train/train_finetune.py ./
+
+ENV MODEL_PATH=/model
+ENV TRAIN_DATASET=/workspace/extremism_detection_dataset_number_char/train_dataset.jsonl
+ENV OUTPUT_DIR=/output
+
+CMD ["python", "train_finetune.py"]

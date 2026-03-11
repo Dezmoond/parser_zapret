@@ -1,0 +1,8 @@
+# Образ и xformers рассчитаны на torch 2.5.1 — не менять.
+torch==2.5.1
+# Ограничение: не повышать transformers (4.46+ тянет torchao/torch.int1).
+transformers==4.45.2
+# Ограничение: unsloth импортирует huggingface_hub.utils._token — в 0.26+ модуль убран (unsloth#1148). Нижняя граница 0.23.2 — transformers 4.45.2.
+huggingface_hub>=0.23.2,<0.26.0
+# Фиксируем unsloth 2024.9.post3: 2024.12.5 требует transformers 4.46.x (у нас 4.45.2). Экстра cu121-torch250 не используем — xformers и bitsandbytes уже поставлены в шаге 2a.
+unsloth==2024.9.post3

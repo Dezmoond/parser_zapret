@@ -1,0 +1,29 @@
+# Запуск чата с Llama в контейнере (GPU).
+# Нужен Docker с поддержкой NVIDIA (nvidia-container-toolkit / WSL2 + драйвер на хосте).
+#
+# 1) Путь к модели: создайте .env с MODEL_HOST_PATH=... или используется значение по умолчанию.
+# 2) Запуск:
+#    docker compose build
+#    docker compose run --rm llama-chat
+#
+# Без compose:
+#    docker run -it --gpus all -v "H:/anaconda/.../Llama-3.2-3B-Instruct:/model" llama-chat
+
+services:
+  llama-chat:
+    build: .
+    image: llama-chat
+    container_name: llama-chat
+    environment:
+      - MODEL_PATH=/model
+    volumes:
+      - ${MODEL_HOST_PATH:-H:/anaconda/Lama5/Lama5/Llama-3.2-3B-Instruct}:/model
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

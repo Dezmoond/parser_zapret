@@ -1,0 +1,6 @@
+# Дообучение Llama 3.2 (GPU)
+torch>=2.2.0
+transformers>=4.36.0
+accelerate>=0.25.0
+datasets>=2.14.0
+# Опционально: pip install flash-attn — ускорение (если не установлен, используется SDPA)

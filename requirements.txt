@@ -1,0 +1,7 @@
+# Чат с Llama-3.2-3B-Instruct
+# Рекомендуемый Python: 3.10 или 3.11
+# Установка: pip install -r requirements.txt
+
+torch>=2.2.0,<2.6.0
+transformers>=4.36.0,<4.46.0
+accelerate>=0.25.0

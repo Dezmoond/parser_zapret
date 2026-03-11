@@ -1,0 +1,18 @@
+# Вариант только CPU (без GPU). Сборка: docker build -f Dockerfile.cpu -t llama-chat-cpu .
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+
+COPY requirements-cpu.txt ./
+RUN pip install --no-cache-dir -r requirements-cpu.txt
+
+COPY chat_llama.py ./
+
+ENV MODEL_PATH=/model
+
+CMD ["python", "chat_llama.py"]

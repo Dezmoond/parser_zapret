@@ -1,0 +1,46 @@
+# Образ для обучения с Unsloth (LoRA). Не заменяет основной Dockerfile.train.
+# PyTorch 2.5 — нужен для unsloth_zoo (torch._inductor.config, triton) и create_gradient_checkpointing_buffer.
+# Сборка: docker build -f llama_test/llama_train/Dockerfile.train.unsloth -t llama-train-unsloth .
+#
+# Обучение (CMD по умолчанию): docker run --gpus all -v ... -v .../output_unsloth:/output_unsloth -e MODEL_PATH=/model -e TRAIN_DATASET=... -e OUTPUT_DIR=/output_unsloth llama-train-unsloth
+# Чат (ручное тестирование): docker run -it --gpus all -v .../output_unsloth:/output_unsloth -e MODEL_PATH=/output_unsloth llama-train-unsloth python chat_unsloth.py
+# Тест на датасете: docker run --gpus all -v .../output_unsloth:/output_unsloth -v .../extremism_detection_dataset_number_char:/data -e MODEL_PATH=/output_unsloth -e TEST_DATASET=/data/test_dataset.jsonl llama-train-unsloth python test_evaluate.py
+
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-runtime
+
+# Triton (ядра unsloth) при первом forward компилирует код — нужен C-компилятор.
+RUN apt-get update && apt-get install -y --no-install-recommends gcc g++ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
+
+# Шаг 1: базовые зависимости (фиксированные версии), быстрый кэш
+COPY llama_test/llama_train/requirements_unsloth_base.txt ./
+RUN pip install --no-cache-dir --timeout 120 --retries 5 -r requirements_unsloth_base.txt
+
+# Шаг 2a: xformers и bitsandbytes с проверенными версиями (torch 2.5.1 не трогаем)
+# xformers — wheel PyTorch cu121 для Python 3.11 (cu121onlytorch251). bitsandbytes 0.43.3.
+ENV PIP_DEFAULT_TIMEOUT=7200
+COPY llama_test/llama_train/constraints_torch.txt ./
+RUN PIP_CONSTRAINT="" pip install --no-cache-dir --timeout 7200 --retries 10 \
+    -c constraints_torch.txt \
+    "https://download.pytorch.org/whl/cu121/xformers-0.0.29.post1-cp311-cp311-manylinux_2_28_x86_64.whl" \
+    bitsandbytes==0.43.3
+
+# Шаг 2b: Unsloth 2024.9.post3 без экстра (xformers/bitsandbytes уже в шаге 2a; экстра cu121-torch250 есть только в 2024.12+, который тянет transformers 4.46.x)
+COPY llama_test/llama_train/constraints_unsloth.txt ./
+RUN pip install --no-cache-dir --timeout 7200 --retries 10 -c constraints_unsloth.txt "unsloth==2024.9.post3"
+
+# scikit-learn для test_evaluate.py (метрики, матрица путаницы)
+RUN pip install --no-cache-dir "scikit-learn>=1.0.0"
+
+COPY llama_test/llama_train/train_finetune_unsloth.py ./
+COPY llama_test/llama_train/chat_unsloth.py ./
+COPY llama_test/llama_train/test_evaluate.py ./
+
+ENV MODEL_PATH=/model
+ENV TRAIN_DATASET=/workspace/extremism_detection_dataset_number_char/train_dataset.jsonl
+ENV OUTPUT_DIR=/output_unsloth
+
+CMD ["python", "train_finetune_unsloth.py"]

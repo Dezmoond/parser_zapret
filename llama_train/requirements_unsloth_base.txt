@@ -1,0 +1,12 @@
+# Устанавливается первым шагом (лёгкие пакеты, быстрый кэш).
+# Образ уже содержит torch 2.5.1 — не переустанавливаем.
+# При изменении: проверить импорты в train_finetune_unsloth.py и цепочку зависимостей (см. DEPENDENCIES_CHECK.md).
+# huggingface_hub: >=0.23.2 (transformers 4.45.2), <0.26 (в 0.26+ убран utils._token — unsloth#1148).
+huggingface_hub>=0.23.2,<0.26.0
+transformers==4.45.2
+datasets==2.18.0
+# 0.34.2+ нужен: в 0.33 вызывается optimizer.train() → AttributeError (unsloth#1069, LlamaFactory#5402).
+accelerate>=0.34.2,<0.35
+trl==0.8.6
+peft==0.13.2
+rich>=13.0.0

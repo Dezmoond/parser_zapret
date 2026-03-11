@@ -1,0 +1,12 @@
+# Образ: PyTorch 2.5.1 (pytorch/pytorch:2.5.1-cuda12.1-cudnn9-runtime).
+# Жёсткие версии — чтобы pip не тянул transformers>=4.46 (torchao/torch.int1) и не висел на разрешении.
+
+# Сначала фиксируем базовые зависимости (порядок важен для разрешения).
+transformers==4.45.2
+datasets==2.18.0
+accelerate==0.33.0
+trl==0.8.6
+peft==0.13.2
+
+# Unsloth после — не должен повысить transformers (unsloth требует >=4.36).
+unsloth[cu121-torch250]

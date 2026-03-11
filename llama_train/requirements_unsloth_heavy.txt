@@ -1,0 +1,6 @@
+# Проверенный набор для torch 2.5.1 + cu121 (образ pytorch:2.5.1-cuda12.1).
+# В Dockerfile xformers ставится по прямой ссылке на wheel PyTorch (cp311, cu121).
+# bitsandbytes 0.43.3 — минимум из unsloth extras, совместим с torch 2.5.
+# См. DEPENDENCIES_CHECK.md, раздел 3.
+xformers==0.0.29.post1
+bitsandbytes==0.43.3

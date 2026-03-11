@@ -1,0 +1,2 @@
+# Не повышать torch при установке xformers/bitsandbytes (образ и unsloth[cu121-torch250] рассчитаны на 2.5.1).
+torch==2.5.1
