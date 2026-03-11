@@ -16,6 +16,45 @@
 
 Перед обучением: `pip install -r llama_train/requirements_unsloth.txt`. Перед чатом/тестом: `pip install -r requirements.txt`.
 
+### Запуск через Docker (обучение, чат, тест)
+
+Нужны: Docker с поддержкой GPU (`--gpus all`), пути к модели и к проекту — подставьте свои.
+
+**1. Сборка образа для обучения/чата/теста (Unsloth):**
+```powershell
+docker build -f llama_train/Dockerfile.train.unsloth -t llama-train-unsloth .
+```
+
+**2. Обучение (Unsloth):**
+```powershell
+docker run --gpus all -v "H:/anaconda/Lama5/Lama5/Llama-3.2-3B-Instruct:/model" -v "E:/CURSOR/llama_test:/workspace" -v "E:/CURSOR/llama_test/llama_train/output_unsloth:/output_unsloth" -e MODEL_PATH=/model -e TRAIN_DATASET=/workspace/extremism_detection_dataset_number_char/train_dataset.jsonl -e OUTPUT_DIR=/output_unsloth llama-train-unsloth
+```
+
+**3. Чат (интерактивный, модель из output_unsloth):**
+```powershell
+docker run -it --rm --gpus all -v "E:/CURSOR/llama_test/llama_train/output_unsloth:/output_unsloth" -e MODEL_PATH=/output_unsloth llama-train-unsloth python chat_unsloth.py
+```
+
+**4. Тест (оценка на датасете):**
+```powershell
+docker run --rm --gpus all -v "E:/CURSOR/llama_test/llama_train/output_unsloth:/output_unsloth" -v "E:/CURSOR/llama_test/../extremism_detection_dataset_number_char:/data" -v "E:/CURSOR/llama_test/logs:/logs" -e MODEL_PATH=/output_unsloth -e TEST_DATASET=/data/test_dataset.jsonl -e EVAL_LOG=/logs/evaluation.log llama-train-unsloth python test_evaluate.py
+```
+
+Пути `E:/CURSOR/llama_test`, `H:/anaconda/...`, датасет и папка логов — замените на свои. Подробнее: раздел «Запуск через Docker» ниже и `llama_train/README.md`.
+
+или так 
+
+ТЕСТ
+docker run --rm --gpus all ^
+  -v E:\CURSOR\DIPLOM\llama_test\output_unsloth:/model ^
+  -v E:\CURSOR\DIPLOM\extremism_detection_dataset_number_char\test_dataset.jsonl:/data/test_dataset.jsonl ^
+  -v E:\CURSOR\DIPLOM\llama_test\logs:/logs ^
+  -e MODEL_PATH=/model ^
+  -e TEST_DATASET=/data/test_dataset.jsonl ^
+  -e EVAL_LOG=/logs/evaluation.log ^
+  -e MAX_TEST_SAMPLES=0 ^
+  llama-train-unsloth ^
+  python /workspace/llama_test/llama_train/test_evaluate.py
 ---
 
 ## Что нужно для запуска
